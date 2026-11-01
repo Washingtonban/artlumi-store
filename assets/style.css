@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  --green: #4a5a3f;
+  --green-dark: #31412d;
+  --beige: #e9dfcf;
+  --cream: #f6f1e8;
+  --ink: #2e2a25;
+  --blue: #1d4ed8;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; margin: 0; color: var(--ink); background: var(--cream); font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; line-height: 1.5; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.container { width: min(100% - 48px, 1180px); margin-inline: auto; }
+.site-header { border-bottom: 1px solid rgba(46,42,37,.12); }
+.header-inner { display: flex; align-items: center; min-height: 80px; }
+.brand { display: inline-flex; align-items: center; min-height: 44px; }
+.brand img { width: 150px; height: auto; }
+.eyebrow { margin: 0 0 20px; color: var(--green-dark); font-size: .73rem; font-weight: 800; letter-spacing: .16em; line-height: 1.4; }
+h1 { margin: 0; font-size: clamp(3.25rem, 8vw, 6rem); font-weight: 800; letter-spacing: -.045em; line-height: 1.08; overflow-wrap: break-word; }
+em { color: var(--green); font-family: Georgia, serif; font-weight: 400; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 52px; padding: 13px 22px; border: 2px solid transparent; border-radius: 999px; font-weight: 800; text-align: center; text-decoration: none; transition: transform .2s ease, background-color .2s ease; }
+.button:hover { transform: translateY(-3px); }
+.button-primary { color: #fff; background: var(--green-dark); }
+.button-primary:hover { background: #263722; }
+.button-outline { border-color: var(--green-dark); color: var(--green-dark); }
+.button-outline:hover { background: var(--beige); }
+.coming-soon, .not-found { display: flex; flex: 1; align-items: center; padding-block: 64px; }
+.coming-soon-inner { text-align: center; }
+.lead { max-width: 590px; margin: 24px auto 32px; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.not-found h1 { max-width: 800px; font-size: clamp(2.65rem, 6vw, 5rem); }
+.not-found p:not(.eyebrow) { margin: 24px 0 30px; font-size: 1.1rem; }
+.site-footer { padding-block: 28px; color: #fff; background: #263722; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; }
+.site-footer small, .site-footer a { font-size: .83rem; }
+.site-footer a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; overflow-wrap: anywhere; }
+.site-footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+@media (max-width: 520px) {
+  .container { width: min(100% - 32px, 1180px); }
+  .header-inner { min-height: 68px; }
+  .brand img { width: 124px; }
+  .coming-soon, .not-found { padding-block: 48px; }
+  .actions { flex-direction: column; }
+  .actions .button { width: 100%; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
